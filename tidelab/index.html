@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TIIDELab Project</title>
+    <meta name="description" content="Students' Registration Form using HTML and CSS">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="Google.png" />
+    <style>
+        body {
+            background-color: chocolate;
+        }
+        
+        .registration {
+            margin: 3rem 2rem;
+            background-color: white;
+            padding: 1rem;
+        }
+        
+        img {
+            margin: 2rem 5rem 2rem 0;
+            width: auto;
+            height: auto;
+            border-radius: 50%;
+        }
+        
+        .right {
+            margin: 2rem 0;
+        }
+        
+        h3 {
+            margin-top: 2rem;
+        }
+        
+        #name {
+            width: 30%;
+            margin: auto;
+            height: 25px;
+        }
+        
+        #date {
+            width: 45.8%;
+            height: 25px;
+            margin-top: 1rem;
+        }
+        
+        #street {
+            width: 93%;
+            height: 25px;
+        }
+        
+        #city,
+        #state {
+            width: 46%;
+            height: 25px;
+            margin-top: 1rem;
+        }
+        
+        #country,
+        #zip {
+            width: 46%;
+            height: 25px;
+            margin-top: 1rem;
+        }
+        
+        #comment {
+            width: 93%;
+            height: 130px;
+        }
+        
+        .btn {
+            width: 94%;
+            height: 30px;
+            color: white;
+            background-color: rgb(84, 84, 252);
+            margin-top: 1rem;
+        }
+        
+        .dropdown {
+            width: 10%;
+            margin-right: -0.5rem;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registration">
+        <div style="display: flex;;">
+            <img src="Google.png" alt="">
+
+            <div class="right" style="font-family: 'Times New Roman', Times, serif; font-size: larger; ">
+                <h1>Student Registration Form</h1>
+                <p>Fill out the to apply for the training courses. You can consider your application accepted after received a confirmation email.</p>
+
+            </div>
+        </div>
+        <div class="form">
+            <form action="">
+                <h3>Student Information</h3>
+                <input type="text" id="name" placeholder="First Name" required>
+                <input type="text" id="name" placeholder="Middle Name" required>
+                <input type="text" id="name" placeholder="Last Name" required> <br>
+                <input placeholder="Date of birth" type="text" onfocus="(this.type='date')" id="date" />
+                <input type="text" placeholder="Student ID" id="date" required> <br>
+                <h3>Address</h3>
+                <input type="text" id="street" placeholder="Street" required> <br>
+                <input type="text" id="city" placeholder="City" required>
+                <input type="text" id="state" placeholder="State/Province" required><br>
+                <input type="text" id="country" placeholder="Country" required>
+                <input type="text" id="zip" placeholder="Zip Code" required> <br>
+                <h3>Courses*</h3>
+
+                <input type="button" style="width: 10%; height: 28px; margin-bottom: -0.5rem;" value="+ Add Courses"> <br>
+                <select class="dropdown">   
+                    <option value="Course">Course</option>  
+                    <option value="BCA">Mathematics</option>  
+                    <option value="BBA">Physics</option>  
+                    <option value="B.Tech">Chemistry</option>  
+                    <option value="MBA">Biology</option>  
+                    <option value="MCA">Yoruba</option>  
+                    <option value="M.Tech">English</option>  
+                    </select>
+
+                <select class="dropdown">    
+                        <option value="Course">Level</option>  
+                        <option value="BCA">100L</option>  
+                        <option value="BBA">200L</option>  
+                        <option value="B.Tech">300L</option>  
+                        <option value="MBA">400L</option>  
+                        <option value="MCA">500L</option>  
+                </select>
+
+
+                <select class="dropdown">  
+                            <option value="Course">Language</option>  
+                            <option value="BCA">English</option>  
+                            <option value="BBA">Arabic</option>  
+                            <option value="B.Tech">French</option>  
+                            <option value="MBA">Yoruba</option>  
+                            <option value="MCA">Hausa</option>  
+                            <option value="M.Tech">Igbo</option>  
+              </select>
+
+                <select class="dropdown">  
+                                <option value="Course">Start Date</option>  
+                                <option value="BCA">2020</option>  
+                                <option value="BBA">2021</option>  
+                                <option value="B.Tech">2022</option>  
+                                <option value="MBA">2023</option>  
+                                <option value="MCA">2024</option>  
+                                <option value="M.Tech">2025</option>  
+                 </select>
+                <input type="text" id="comment" placeholder="Comments" required>
+                <button type="submit" class="btn btn-primary">SEND REQUEST</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+
+</html>
+
+</html>
