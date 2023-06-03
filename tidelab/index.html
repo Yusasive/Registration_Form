@@ -98,23 +98,23 @@
             </div>
         </div>
         <div class="form">
-            <form action="">
+             <form action="" onsubmit="processForm ">
                 <h3>Student Information</h3>
-                <input type="text" id="name" placeholder="First Name" required>
-                <input type="text" id="name" placeholder="Middle Name" required>
-                <input type="text" id="name" placeholder="Last Name" required> <br>
-                <input placeholder="Date of birth" type="text" onfocus="(this.type='date')" id="date" />
-                <input type="text" placeholder="Student ID" id="date" required> <br>
+                <input type="text" name="first" id="name" placeholder="First Name" required>
+                <input type="text" name="middle" id="name" placeholder="Middle Name" required>
+                <input type="text" name="last" id="name" placeholder="Last Name" required> <br>
+                <input placeholder="Date of birth" name="date" type="text" onfocus="(this.type='date')" id="date" />
+                <input type="text" name="student" placeholder="Student ID" id="date" required> <br>
                 <h3>Address</h3>
-                <input type="text" id="street" placeholder="Street" required> <br>
-                <input type="text" id="city" placeholder="City" required>
-                <input type="text" id="state" placeholder="State/Province" required><br>
-                <input type="text" id="country" placeholder="Country" required>
-                <input type="text" id="zip" placeholder="Zip Code" required> <br>
+                <input type="text" name="street" id="street" placeholder="Street" required> <br>
+                <input type="text" name="city" id="city" placeholder="City" required>
+                <input type="text" name="state" id="state" placeholder="State/Province" required><br>
+                <input type="text" name="country" id="country" placeholder="Country" required>
+                <input type="text" ame="zip" placeholder="Zip Code" required> <br>
                 <h3>Courses*</h3>
 
                 <input type="button" style="width: 10%; height: 28px; margin-bottom: -0.5rem;" value="+ Add Courses"> <br>
-                <select class="dropdown">   
+                <select name="course" class="dropdown">   
                     <option value="Course">Course</option>  
                     <option value="BCA">Mathematics</option>  
                     <option value="BBA">Physics</option>  
@@ -124,7 +124,7 @@
                     <option value="M.Tech">English</option>  
                     </select>
 
-                <select class="dropdown">    
+                <select name="level" class="dropdown">    
                         <option value="Course">Level</option>  
                         <option value="BCA">100L</option>  
                         <option value="BBA">200L</option>  
@@ -134,7 +134,7 @@
                 </select>
 
 
-                <select class="dropdown">  
+                <select name="language" class="dropdown">  
                             <option value="Course">Language</option>  
                             <option value="BCA">English</option>  
                             <option value="BBA">Arabic</option>  
@@ -144,7 +144,7 @@
                             <option value="M.Tech">Igbo</option>  
               </select>
 
-                <select class="dropdown">  
+                <select name="start" class="dropdown">  
                                 <option value="Course">Start Date</option>  
                                 <option value="BCA">2020</option>  
                                 <option value="BBA">2021</option>  
@@ -153,7 +153,7 @@
                                 <option value="MCA">2024</option>  
                                 <option value="M.Tech">2025</option>  
                  </select>
-                <input type="text" id="comment" placeholder="Comments" required>
+                <input name="comment" type="text" id="comment" placeholder="Comments" required>
                 <button type="submit" class="btn btn-primary">SEND REQUEST</button>
             </form>
         </div>
@@ -162,6 +162,57 @@
 </body>
 
 
-</html>
+<script>
+    function processForm() {
+
+        firstname = document.getElementsByName('first').value
+        middlename = document.getElementsByName('middle').value
+        lastname = document.getElementsByName('last').value
+        dateofbirth = document.getElementsByName('date').value
+        studentID = document.getElementsByName('student').value
+        street = document.getElementsByName('street').value
+        city = document.getElementsByName('city').value
+        state = document.getElementsByName('state').value
+        zipcode = document.getElementsByName('zip').value
+        course = document.getElementsByName('course').value
+        level = document.getElementsByName('level').value
+        language = document.getElementsByName('language').value
+        startdate = document.getElementsByName('start').value
+
+        var date = {
+            "first": firstname,
+            "last": lastname,
+            "middle": middlename,
+            "date": dateofbirth,
+            "student": studentID,
+            "street": street,
+            "city": city,
+            "state": state,
+            "zip": zipcode,
+            "course": course,
+            "level": level,
+            "language": language,
+            "start": startdate,
+            "isEnabled": true,
+            "roles": ["user"]
+        }
+
+
+        if (firstname = middlename) {
+            alert('You cant enter the same name')
+        } else {
+            fetch('https://api.openclass.ng/Register', {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    'content-type': 'application/json'
+                }
+            }).then(function(data) {
+                alert('congrats')
+            })
+        }
+
+    }
+</script>
 
 </html>
